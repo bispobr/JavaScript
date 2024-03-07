@@ -1,0 +1,5 @@
+var nome = lines.shift()
+var salario = parseFloat(lines.shift())
+var vendas = parseFloat(lines.shift())
+nsal = salario + ((vendas * 15)/100)
+console.log(`TOTAL = R$ ${nsal.toFixed(2)}`)
