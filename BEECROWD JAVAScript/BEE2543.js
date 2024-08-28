@@ -1,9 +1,11 @@
 var input = require("fs").readFileSync("stdin", "utf8");
 var lines = input.split("\n");
 
-let [gameplays, id] = lines.shift().trim().split(" ").map((x) => parseInt(x))
-
+while (lines.length){
+ 
 var res = 0
+     
+let [gameplays, id] = lines.shift().trim().split(" ").map((x) => parseInt(x))
 
 for (let i = 0; i < gameplays; i++) {
 
@@ -16,4 +18,4 @@ for (let i = 0; i < gameplays; i++) {
 }
 
 console.log(res)
-
+}
