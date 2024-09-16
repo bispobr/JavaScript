@@ -1,0 +1,23 @@
+var input = require("fs").readFileSync("stdin", "utf8");
+var lines = input.split("\n");
+
+ process.stdout.write("---------------------------------------\n");
+ process.stdout.write("|  decimal  |  octal  |  Hexadecimal  |\n");
+ process.stdout.write("---------------------------------------\n");
+ process.stdout.write("|      0    |    0    |       0       |\n");
+ process.stdout.write("|      1    |    1    |       1       |\n");
+ process.stdout.write("|      2    |    2    |       2       |\n");
+ process.stdout.write("|      3    |    3    |       3       |\n");
+ process.stdout.write("|      4    |    4    |       4       |\n");
+ process.stdout.write("|      5    |    5    |       5       |\n");
+ process.stdout.write("|      6    |    6    |       6       |\n");
+ process.stdout.write("|      7    |    7    |       7       |\n");
+ process.stdout.write("|      8    |   10    |       8       |\n");
+ process.stdout.write("|      9    |   11    |       9       |\n");
+ process.stdout.write("|     10    |   12    |       A       |\n");
+ process.stdout.write("|     11    |   13    |       B       |\n");
+ process.stdout.write("|     12    |   14    |       C       |\n");
+ process.stdout.write("|     13    |   15    |       D       |\n");
+ process.stdout.write("|     14    |   16    |       E       |\n");
+ process.stdout.write("|     15    |   17    |       F       |\n");
+ process.stdout.write("---------------------------------------\n");
