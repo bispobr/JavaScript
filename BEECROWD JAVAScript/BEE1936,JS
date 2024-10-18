@@ -1,0 +1,15 @@
+var input = require("fs").readFileSync("stdin", "utf8");
+var lines = input.trim().split("\n");
+
+let fatorial = [40320, 5040, 720, 120, 24, 6, 2, 1];
+
+let n = parseInt(lines.shift())
+
+let resultado = 0;
+
+for (let i = 0; i < fatorial.length; i++) {
+    resultado += Math.floor(n / fatorial[i]);
+    n %= fatorial[i];
+}
+
+console.log(resultado)
