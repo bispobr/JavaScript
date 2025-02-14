@@ -1,30 +1,29 @@
 var input = require("fs").readFileSync("stdin", "utf8");
-var lines = input.trim().split("\n");
+var lines = input.split("\n");
 
-const compCrescente = (a, b) => {
-  return a - b;
-};
-const compDecrescente = (a, b) => {
-  return b - a;
-};
+let n = parseInt(lines.shift())
 
-let p = 0;
-let n = parseInt(lines[p++]);
+let par = []
+let impar = []
 
-let [pares, impares] = [[], []];
-for (let i = 0; i < n; ++i) {
-  let numero = parseInt(lines[p++].trim());
+for (let i = 0; i < n; i++) {
+    let valor = parseInt(lines.shift())
 
-  if (numero % 2 === 0) pares.push(numero);
-  else impares.push(numero);
+    if (valor % 2 == 0) {
+        par.push(valor)
+    } else {
+        impar.push(valor)
+    }
+    
 }
 
-pares.sort(compCrescente);
-impares.sort(compDecrescente);
+par.sort((a, b) => a - b);
+impar.sort((a, b) => b - a);
 
-for (let i = 0; i < pares.length; ++i) {
-  console.log(pares[i]);
-}
-for (let i = 0; i < impares.length; ++i) {
-  console.log(impares[i]);
+for (let j = 0; j< par.length; j++) {
+  console.log(par[j])
+    }
+
+for (let j = 0; j < impar.length; j++) {
+  console.log(impar[j]);
 }
