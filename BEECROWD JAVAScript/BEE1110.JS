@@ -1,5 +1,5 @@
 var input = require("fs").readFileSync("stdin", "utf8");
-var lines = input.trim().split("\n");
+var lines = input.split("\n");
 
 class DequeNo {
   constructor(valor) {
@@ -89,3 +89,4 @@ while (lines.length) {
   console.log(`Discarded cards: ${discarded.join(", ")}`);
   console.log(`Remaining card: ${deque.front()}`);
 }
+
