@@ -1,50 +1,29 @@
 var input = require("fs").readFileSync("stdin", "utf8");
 var lines = input.split("\n");
 
-class Pilha {
-  constructor() {
-    this.pilha = [];
-  }
-
-  push(valor) {
-    this.pilha.push(valor);
-  }
-
-  pop() {
-    this.pilha.pop();
-  }
-
-  top() {
-    return this.pilha[this.pilha.length - 1];
-  }
-
-  size() {
-    return this.pilha.length;
-  }
-
-  empty() {
-    return this.pilha.length === 0;
-  }
-}
-
+//corrigir
 while (lines.length) {
-  let expressao = lines.shift().trim();
+    let expressao = lines.shift()
 
-  let i = 0;
-  const pilha = new Pilha();
+    let  correto = true
 
-  for (i = 0; i < expressao.length; ++i) {
-    if (expressao[i] === "(") {
-      pilha.push("(");
-    } else if (expressao[i] === ")") {
-      if (pilha.empty()) break;
-      else pilha.pop();
+    
+    let parenteses = []
+
+    for ( i = 0; i < expressao.length; i++) {
+        if (expressao[i] === "("){
+            parenteses.push("(");
+        } else if (expressao[i] === ")"){
+            if (parenteses.length == 0) {
+                correto = false
+                break;
+            } else{
+                parenteses.pop()
+            }
+        }
+
+        
     }
-  }
-
-  if (i === expressao.length && pilha.empty()) {
-    console.log("correct");
-  } else {
-    console.log("incorrect");
-  }
+    correto = correto & parenteses.length==0;
+    console.log(correto ? "correct" : "incorrect");
 }
