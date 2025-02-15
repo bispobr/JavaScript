@@ -1,5 +1,0 @@
-for (var i = 1;i <=9;i+=2){
-    for (var j = 7;i>=5;j-=1){
-        console.log(`I=${i} J=${j}`)
-    }
-}
